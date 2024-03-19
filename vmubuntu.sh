@@ -6,7 +6,6 @@
 sudo apt update && sudo apt upgrade -y
 
 # Configuracion zona horario en Argentina
-timedatectl list-timezones
 timedatectl set-timezone America/Argentina/Buenos_Aires
 
 # Configurar nombre de host
@@ -14,7 +13,6 @@ sudo hostname bootcampwebexperto
 
 # Crear usuario sudo
 sudo adduser webexpertosudo
-sudo passwd webexpertosudo
 sudo usermod -aG sudo webexpertosudo
 
 # Crear usuario para conexion ssh
