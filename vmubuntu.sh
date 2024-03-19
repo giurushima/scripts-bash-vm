@@ -21,11 +21,11 @@ sudo usermod -aG ssh
 
 # Validar docker e instalar
 
-docker --version
-if [[ $(apt-mark showinstall | grep -q "^docker") == "^docker" ]]; then
+sudo docker --version
+if [[ $(sudo apt-mark showinstall | grep -q "^docker") == "^docker" ]]; then
       echo "Instalando Docker"
       sudo apt-get update
-      apt-mark showinstall | grep -q "^docker"
+      sudo apt-mark showinstall | grep -q "^docker"
       sudo apt-get install ca-certificates curl -y
       sudo install -m 0755 -d /etc/apt/keyrings -y
       sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
@@ -38,18 +38,18 @@ if [[ $(apt-mark showinstall | grep -q "^docker") == "^docker" ]]; then
       sudo apt-get update
 
       sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin -y
-      docker --version
+      sudo docker --version
 else
       echo "Docker ya esta instalado"
 fi
 
 # Validar docker compose e instalar
-docker compose version
-if [[ $(apt-mark showinstall | grep -q "^docker-compose-plugin") == "docker-compose-plugin" ]]; then
+sudo docker compose version
+if [[ $(sudo apt-mark showinstall | grep -q "^docker-compose-plugin") == "docker-compose-plugin" ]]; then
       echo "Instalando Docker Compose"       
       sudo apt-get update
       sudo apt-get install docker-compose-plugin -y
-      docker compose version
+      sudo docker compose version
 else
       echo "Docker Compose ya esta instalado"
 fi
