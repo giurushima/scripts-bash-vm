@@ -20,9 +20,7 @@ sudo adduser ssh
 sudo usermod -aG ssh
 
 # Validar docker e instalar
-
-docker --version
-if [[ $(apt-mark showinstall | grep -q "^docker") == "^docker" ]]; then
+if [[ $(apt-mark showinstall | grep -q "^docker") == "docker" ]]; then
       echo "Instalando Docker"
       sudo apt-get update
       sudo apt-mark showinstall | grep -q "^docker"
@@ -38,18 +36,17 @@ if [[ $(apt-mark showinstall | grep -q "^docker") == "^docker" ]]; then
       sudo apt-get update
 
       sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin -y
-      sudo docker --version
+      docker --version
 else
       echo "Docker ya esta instalado"
 fi
 
 # Validar docker compose e instalar
-docker compose version
 if [[ $(apt-mark showinstall | grep -q "^docker-compose-plugin") == "docker-compose-plugin" ]]; then
       echo "Instalando Docker Compose"       
       sudo apt-get update
       sudo apt-get install docker-compose-plugin -y
-      sudo docker compose version
+      docker compose version
 else
       echo "Docker Compose ya esta instalado"
 fi
