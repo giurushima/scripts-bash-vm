@@ -54,7 +54,6 @@ fi
 # Crear el grupo docker e iniciar el servicio
 sudo groupadd docker
 sudo usermod -aG docker webexpertosudo
-su - webexpertosudo
 sudo systemctl status docker
 sudo systemctl enable docker
 sudo systemctl start docker
@@ -71,7 +70,6 @@ sudo apt install net-tools -y
 # Crear usuario nginx con permisos docker
 sudo adduser nginx
 sudo usermod -aG docker nginx
-su - nginx
 sudo systemctl status docker
 sudo systemctl enable docker
 sudo systemctl start docker
