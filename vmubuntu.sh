@@ -21,7 +21,7 @@ sudo usermod -aG ssh
 
 # Validar docker e instalar
 
-sudo docker --version
+docker --version
 if [[ $(sudo apt-mark showinstall | grep -q "^docker") == "^docker" ]]; then
       echo "Instalando Docker"
       sudo apt-get update
@@ -44,7 +44,7 @@ else
 fi
 
 # Validar docker compose e instalar
-sudo docker compose version
+docker compose version
 if [[ $(sudo apt-mark showinstall | grep -q "^docker-compose-plugin") == "docker-compose-plugin" ]]; then
       echo "Instalando Docker Compose"       
       sudo apt-get update
