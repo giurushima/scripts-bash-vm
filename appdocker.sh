@@ -4,4 +4,4 @@
 
 # 5: Clonar en userdocker para dockerizar app con compose
 su userdocker
-git clone https://github.com/giurushima/compose-ubuntu-app.git
+git clone https://github.com/giurushima/calculadora-epeV3.git
