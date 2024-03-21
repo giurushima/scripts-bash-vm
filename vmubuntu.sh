@@ -20,7 +20,7 @@ sudo adduser ssh
 sudo usermod -aG ssh
 
 # Validar docker e instalar
-if [[ $(apt-mark showinstall | grep -q "^docker") != "^docker" ]]; then
+if [[ $(apt-mark showinstall | grep -q "^docker") == "^docker" ]]; then
       echo "Instalando Docker"
       sudo apt-get update
       sudo apt-get install ca-certificates curl -y
@@ -41,7 +41,7 @@ else
 fi
 
 # Validar docker compose e instalar
-if [[ $(apt-mark showinstall | grep -q "^docker-compose-plugin") != "^docker-compose-plugin" ]]; then
+if [[ $(apt-mark showinstall | grep -q "^docker-compose-plugin") == "^docker-compose-plugin" ]]; then
       echo "Instalando Docker Compose"       
       sudo apt-get update
       sudo apt-get install docker-compose-plugin -y
