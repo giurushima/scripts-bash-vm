@@ -80,6 +80,3 @@ git config --global user.email "giurushima@hotmail.com"
 
 # 4: Clonar repositorio con user nginx
 git clone https://github.com/pablokbs/peladonerd.git
-
-# 5: Crear archivo de nginx con repo app
-git clone https://github.com/giurushima/calculadora-epeV3.git
